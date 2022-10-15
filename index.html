@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Jogo 1.0</title>
+    <style>
+        body{
+            background-image: url(images/background_tavern.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/gato.png" alt="Gato Preto">
+    <script>
+        let x= -800;
+        let y= Math.random()*300;
+        //let y= Math.random()*window.innerHeight;
+        let gatoEl = document.querySelector('img');
+        setInterval(()=>{
+            x++;
+            if(x>window.innerHeight){
+                x=0;
+                y= Math.random()*300;
+            }
+            gatoEl.style.transform = `translate(${x}px,${y}px)`;
+        },10);
+        //function movimentoGato(){
+        //    x++;
+        //    y++;
+        //    gatoEl.style.left = x+'px';
+        //    gatoEl.style.top = y+'px';
+        //}
+    </script>
+</body>
+</html>
