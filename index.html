@@ -6,31 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Jogo 1.0</title>
     <style>
-        body{
-            background-image: url(images/background_tavern.png);
-            background-size: cover;
-            background-repeat: no-repeat;
+        body{ 
+            background-image: url(images/background_tavern.png);/*Plano de fundo*/
+            background-size: cover; /*Cobrir a tela inteira*/
+            background-repeat: no-repeat;/*Sem ficar repetindo a imagem pra completar*/
         }
         img{
-            position: absolute;
+            position: absolute;/*Declarando que a posição é absoluta para img*/
         }
     </style>
 </head>
 <body>
     <img src="images/gato.png" alt="Gato Preto">
     <script>
-        let x= -800;
-        let y= Math.random()*300;
+        /*No de cima ali: Define img(posição absoluta) src pra procurar o arquivo e alt como nome alternativo*/
+        let x= -800; //Posição no eixoX
+        let y= Math.random()*300; //Posição no eixoY
         //let y= Math.random()*window.innerHeight;
-        let gatoEl = document.querySelector('img');
-        setInterval(()=>{
-            x++;
-            if(x>window.innerHeight){
-                x=0;
-                y= Math.random()*300;
+        let gatoEl = document.querySelector('img');//Elemento Gato
+        setInterval(()=>{//Intervalo de tempo em ms para atualizar a pagina
+            x++;//Pra ir aumentando o eixo X
+            if(x>window.innerHeight){//Checando pra ver se esta no final da pagina
+                x=0;//Volta o eixoX pro 0
+                y= Math.random()*300;//Y num novo lugar
             }
-            gatoEl.style.transform = `translate(${x}px,${y}px)`;
-        },10);
+            gatoEl.style.transform = `translate(${x}px,${y}px)`;//Acionar novo posicionamento do gato
+        },10);//tempo em ms
         //function movimentoGato(){
         //    x++;
         //    y++;
